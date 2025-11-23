@@ -1,0 +1,7 @@
+{
+  "name": "cidadao-digital",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

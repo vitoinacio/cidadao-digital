@@ -1,0 +1,58 @@
+.page-background {
+  --background: #f4f7ff;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2933;
+  margin: 8px 0 0;
+}
+
+.welcome-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.problem-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.problem-card ion-card-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.problem-card ion-card-content {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.start-button {
+  --border-radius: 8px;
+  --background: #22c55e;
+  --background-activated: #16a34a;
+  margin-top: 8px;
+}
+
+.quote {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.quote-note {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}

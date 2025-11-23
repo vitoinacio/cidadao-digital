@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cidadão Digital</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding page-background">
+  <!-- QUANDO ESTIVER NO QUIZ -->
+  <div *ngIf="!showFinalScreen; else finalTemplate" class="quiz-container">
+    <h1 class="quiz-title">🧠 Quiz Interativo</h1>
+
+    <p class="question-counter">
+      Pergunta {{ currentIndex + 1 }} de {{ questions.length }}
+    </p>
+
+    <ion-card class="question-card">
+      <ion-card-header>
+        <ion-card-title class="question-text">
+          {{ currentQuestion.text }}
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <div class="options-container">
+      <ion-button
+        *ngFor="let option of currentQuestion.options; let i = index"
+        expand="block"
+        fill="outline"
+        class="option-button"
+        [disabled]="selectedIndex !== null"
+        [ngClass]="{
+          'option-selected': selectedIndex === i,
+          'option-correct':
+            answerStatus === 'correct' && i === currentQuestion.correctIndex,
+          'option-incorrect':
+            answerStatus === 'incorrect' &&
+            i === selectedIndex &&
+            i !== currentQuestion.correctIndex
+        }"
+        (click)="selectOption(i)"
+      >
+        {{ option }}
+      </ion-button>
+    </div>
+
+    <!-- FEEDBACK DE ACERTO -->
+    <div
+      *ngIf="answerStatus === 'correct'"
+      class="feedback-card feedback-correct"
+    >
+      <strong>✅ Correto!</strong> Parabéns pela consciência.
+      <p *ngIf="currentQuestion.explanation">
+        Dica: {{ currentQuestion.explanation }}
+      </p>
+    </div>
+
+    <!-- FEEDBACK DE ERRO -->
+    <div
+      *ngIf="answerStatus === 'incorrect'"
+      class="feedback-card feedback-incorrect"
+    >
+      <strong>❌ Incorreto.</strong>
+      A resposta correta é:
+      <strong>
+        {{ currentQuestion.options[currentQuestion.correctIndex] }}
+      </strong>
+      <p *ngIf="currentQuestion.explanation">
+        Dica: {{ currentQuestion.explanation }}
+      </p>
+    </div>
+
+    <ion-button
+      expand="block"
+      size="large"
+      class="next-button"
+      [disabled]="selectedIndex === null"
+      (click)="nextQuestion()"
+    >
+      {{ isLastQuestion ? 'Ver Resultado' : 'Próxima Pergunta' }}
+    </ion-button>
+  </div>
+
+  <!-- TELA FINAL DE SCORE -->
+  <ng-template #finalTemplate>
+    <div class="result-container">
+      <h1 class="result-title">Parabéns! 🎉</h1>
+      <p class="result-subtitle">Você completou o Quiz!</p>
+
+      <p class="result-score">
+        Sua Pontuação Final:
+        <strong>{{ score }} de {{ questions.length }}</strong>
+      </p>
+
+      <ion-card class="commitment-card">
+        <ion-card-content>
+          <h2 class="commitment-title">Seu Compromisso Cidadão</h2>
+          <p class="commitment-text">
+            Ao aprender sobre acessibilidade e cidadania digital, você se torna
+            um <strong>"Cidadão Digital Responsável"</strong>, ajudando a
+            construir uma web mais ética e inclusiva para todos.
+          </p>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button
+        expand="block"
+        size="large"
+        class="restart-button"
+        (click)="restartQuiz()"
+      >
+        Voltar ao Início
+      </ion-button>
+    </div>
+  </ng-template>
+</ion-content>

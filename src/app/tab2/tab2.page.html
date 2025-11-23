@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cidadão Digital</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  class="ion-padding page-background"
+  #contentRef
+>
+  <div class="content-container">
+    <h1 class="page-title">
+      📚 Conteúdo Educativo
+    </h1>
+
+    <ion-card class="info-card">
+      <ion-card-content class="info-card-content">
+        <ion-icon name="bulb-outline" class="info-icon"></ion-icon>
+        <div>
+          <p class="info-text">
+            A cidadania digital começa com o respeito aos direitos de
+            todos no ambiente online.
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <section class="section-block">
+      <h2 class="section-title">1. O Pilar da Inclusão</h2>
+      <p class="section-text">
+        Inclusão digital é garantir que todos, independentemente de sua
+        condição socioeconômica, idade ou deficiência, tenham
+        <strong>acesso e capacidade</strong> de usar as Tecnologias da
+        Informação e Comunicação (TICs). Isso envolve hardware, internet,
+        alfabetização digital e, crucialmente, acessibilidade.
+      </p>
+      <p class="section-text">
+        Promove-se o acesso democrático à informação e a participação
+        plena na sociedade.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <h2 class="section-title">2. Acessibilidade na Prática</h2>
+      <p class="section-text">
+        As Diretrizes de Acessibilidade para Conteúdo Web (WCAG) se
+        baseiam em 4 princípios, que promovem a ética na programação:
+      </p>
+
+      <ul class="principles-list">
+        <li>
+          <strong>Perceptível:</strong>
+          O conteúdo deve ser apresentado de formas que os usuários possam
+          perceber, como texto alternativo para imagens e legendas para
+          vídeos.
+        </li>
+        <li>
+          <strong>Operável:</strong>
+          As interfaces e navegações devem funcionar. Isso inclui
+          navegação via teclado, tempo suficiente para leitura e evitar
+          conteúdo que possa causar convulsões.
+        </li>
+        <li>
+          <strong>Compreensível:</strong>
+          A informação deve ser clara, o idioma deve ser identificável e a
+          operação deve ser previsível.
+        </li>
+        <li>
+          <strong>Robusto:</strong>
+          O conteúdo deve ser interpretável por uma vasta gama de agentes
+          de usuário, incluindo tecnologias assistivas (leitores de tela).
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Botão grande para ir ao quiz -->
+  <div class="bottom-actions">
+    <ion-button
+      expand="block"
+      size="large"
+      class="quiz-button"
+      routerLink="/tabs/tab3"
+    >
+      TESTAR CONHECIMENTO (QUIZ)
+    </ion-button>
+
+    <ion-fab
+      vertical="bottom"
+      horizontal="end"
+      slot="fixed"
+    >
+      <ion-fab-button
+        size="small"
+        (click)="scrollToTop(contentRef)"
+      >
+        <ion-icon name="chevron-up-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

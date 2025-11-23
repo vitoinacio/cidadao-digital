@@ -1,0 +1,86 @@
+.page-background {
+  --background: #f4f7ff;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2933;
+  margin-top: 8px;
+}
+
+.info-card {
+  border-left: 4px solid #facc15;
+  border-radius: 12px;
+}
+
+.info-card-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-icon {
+  font-size: 1.8rem;
+}
+
+.info-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.section-block {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #111827;
+}
+
+.section-text {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.principles-list {
+  padding-left: 20px;
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.principles-list li {
+  margin-bottom: 6px;
+}
+
+.bottom-actions {
+    margin-top: 15px;
+  padding: 0 16px 10px;
+  box-sizing: border-box;
+}
+
+ion-fab {
+    position: fixed;
+}
+
+.quiz-button {
+  --border-radius: 8px;
+  --background: #2563eb;
+  --background-activated: #1d4ed8;
+}
